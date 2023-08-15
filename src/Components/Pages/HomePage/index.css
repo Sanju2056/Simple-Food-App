@@ -1,0 +1,116 @@
+.hp-container {
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    overflow: hidden;
+}
+
+.hp-box {
+    height: 100%;
+    width: 100%;
+    background-image: url('/public/Images/bggg.jpeg');
+    background-position: center;
+    background-size: cover;  
+
+}
+
+.hp-box-box{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.item-container{
+    /* background-color: green; */
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 100px;
+}
+.hp-item-box {
+    height: 170px;
+    width: 320px;
+    background-color:#53504b;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 2px 1px 6px 0px;
+    border: none;
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.hp-text-box {
+    height: 100%;
+    width: 60%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    
+}
+
+.hp-price-button {
+    background-color: #FF4343;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    bottom: 0;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color:#fff;
+    height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.hp-title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.hp-dis {
+    color: #fff;
+    font-size: 12px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.hp-box-2{
+    /* background-color: green; */
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.button-1{
+    background-color: #FF4343;
+    height: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 12px;
+    color:#fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+} 
