@@ -2,7 +2,8 @@
     height: 100%;
     width: 100%;
     /* background-color: red; */
-    overflow: hidden;
+    /* overflow: hidden; */
+    /* overflow-y: scroll; */
 }
 
 .hp-box {
@@ -10,20 +11,30 @@
     width: 100%;
     background-image: url('/public/Images/bggg.jpeg');
     background-position: center;
-    background-size: cover;  
+    background-size: cover;
+    background-repeat: repeat-y;
+    /* overflow: scroll; */
 
 }
 
-.hp-box-box{
+.hp-box-box {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    /* background-color: white; */
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    overflow: scroll;
+
 }
-.item-container{
+
+.hp-box-box::-webkit-scrollbar {
+    display: none;
+}
+
+.item-container {
     /* background-color: green; */
     width: 80%;
     display: flex;
@@ -33,10 +44,11 @@
     gap: 30px;
     padding-bottom: 100px;
 }
+
 .hp-item-box {
     height: 170px;
     width: 320px;
-    background-color:#53504b;
+    background-color: #53504b;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -54,25 +66,40 @@
     display: flex;
     flex-direction: column;
     /* background-color: green; */
-    
+
+}
+
+.hp-po-buttons {
+    display: flex;
+    margin-top: 40px;
+    gap: 10px;
+    /* background-color: yellow; */
+    justify-content: flex-end;
+    margin-right: 20px;
 }
 
 .hp-price-button {
-    background-color: #FF4343;
-    position: absolute;
-    right: 0;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    bottom: 0;
-    border: none;
-    border-radius: 4px;
+    background-color: #fff;
+    border-radius: 5px;
     font-size: 12px;
     font-weight: 600;
-    color:#fff;
-    height: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 6px;
+    cursor: pointer;
+    border: none;
+    width: 60px;
+}
 
+.hp-order-button {
+    background-color: #FF4343;
+    ;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px;
+    cursor: pointer;
+    border: none;
+    width: 60px;
+    color: #fff;
 }
 
 .hp-title {
@@ -91,26 +118,28 @@
     margin-block-start: 0;
     margin-block-end: 0;
 }
-.hp-box-2{
+
+.hp-box-2 {
     /* background-color: green; */
-  height: 40px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 15px;
-  margin-top: 50px;
-  margin-bottom: 20px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
-.button-1{
+
+.button-1 {
     background-color: #FF4343;
     height: 25px;
     padding-left: 15px;
     padding-right: 15px;
     font-size: 12px;
-    color:#fff;
+    color: #fff;
     border: none;
     border-radius: 5px;
     font-weight: 600;
     cursor: pointer;
-} 
+}

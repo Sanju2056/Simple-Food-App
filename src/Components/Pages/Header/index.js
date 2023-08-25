@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaSearch } from "react-icons/fa";
 import './index.css'
-import { useState } from 'react';
-const Header = ({setSearchValue,onFilter}) => {
+import { userContext } from '../../../Provider';
+// import { useState } from 'react';
+const Header = ({onFilter}) => {
+    const {cost,setSearchValue} = useContext(userContext)
     const SearchMenu = () =>{
         onFilter();
     }
@@ -18,6 +20,7 @@ const Header = ({setSearchValue,onFilter}) => {
                     />
                     <FaSearch className='sb-icon' onClick={SearchMenu} />
                 </div>
+                <p className='total-text'>Total : {cost}</p>
             </div>
            
         </div>
