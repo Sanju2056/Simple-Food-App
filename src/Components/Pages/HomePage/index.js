@@ -106,9 +106,9 @@ const HomePage = () => {
                                 </button>
                             })
                         }
-                        <Link to = "/orderList">
                         <button className='button-1' onClick={updateOrderList}>Order-List</button>
-                        </Link>
+                        {/* <Link to = "/orderList">
+                        </Link> */}
                     </div>
                     <div className='item-container'>
                         {
