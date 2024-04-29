@@ -1,13 +1,17 @@
 import React from 'react'
-import Header from '../Header'
 import './index.css'
 import data from '../../constants/data'
-import { useState, useEffect ,useContext,createContext} from 'react'
-import { Outlet, Link } from "react-router-dom";
+import { useState, useEffect, useContext, createContext } from 'react'
 import { userContext } from '../../../Provider'
+import Header from '../Header'
+import { FaSearch } from "react-icons/fa";
+
 
 const HomePage = () => {
-    const {cost,setCost} = useContext(userContext)
+    const { cost, setCost } = useContext(userContext)
+    const [searchValue, setSearchValue] = useState()
+    const [menuList, setMenuList] = useState(data)
+    const Category = ['All', 'Breakfast', 'Lunch', 'Dinner']
 
     const ItemCard = ({ item, index }) => {
         return (
@@ -37,16 +41,18 @@ const HomePage = () => {
         //     ...orderedFood, item
         // ]
 
-        setOrderedFood((prev) =>{return [
-            ...prev,item
-        ]});
+        setOrderedFood((prev) => {
+            return [
+                ...prev, item
+            ]
+        });
 
         // TOTAL AMOUNT OF ORDER 
-       
-        
+
+
     }
     useEffect(() => {
-        var totalSum = 0 
+        var totalSum = 0
         orderedFood.map((opItem) => {
             console.log(opItem.price)
             totalSum += opItem.price
@@ -78,19 +84,34 @@ const HomePage = () => {
 
     const searchFilter = () => {
         const searchedFilterData = data.filter((searchedData, index) => {
+            console.log(searchedData.name)
+            console.log(searchValue)
             return (searchedData.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
         })
+        console.log(searchedFilterData)
         setMenuList(searchedFilterData)
     }
-
-    const [searchValue, setSearchValue] = useState()
-    const [menuList, setMenuList] = useState(data)
-    const Category = ['All', 'Breakfast', 'Lunch', 'Dinner']
+  
+    
 
     return (
-       
+
         <div className='hp-container'>
-            {/* <Header setSearchValue={setSearchValue} onFilter={searchFilter} cost={cost} /> */}
+            <div className='header-container'>
+                <div className='hc-box-1'>
+                    <p className='h-text'>N<span className='span-tag'>b</span>ot C<span className='span-tag'>a</span>fe</p>
+                    <div className='search-bar'>
+                        <input
+                            className='sb-input'
+                            placeholder='Search for food...'
+                            onChange={(e) => { setSearchValue(e.target.value) }}
+                        />
+                        <FaSearch className='sb-icon' onClick={searchFilter} />
+                    </div>
+                    <p className='total-text'>Total : {cost}</p>
+                </div>
+
+            </div>
             <div className='hp-box'>
                 <div className='hp-box-box'>
                     <div className='hp-box-2'>
@@ -120,7 +141,7 @@ const HomePage = () => {
                 </div>
             </div>
         </div>
-      
+
     )
 }
 

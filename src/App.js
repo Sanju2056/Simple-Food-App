@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <UserProvider>
         <BrowserRouter>
-          <Header />
+          {/* <Header /> */}
           <Routes >
             <Route path="/" index element={<HomePage />} />
             <Route path="orderList" element={<OrderList />} />
