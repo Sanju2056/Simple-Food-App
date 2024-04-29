@@ -92,7 +92,11 @@ const HomePage = () => {
         setMenuList(searchedFilterData)
     }
   
-    
+    const KeyPress = (event) => {
+        if (event.key === 'Enter') {
+            searchFilter();
+        }
+    };
 
     return (
 
@@ -105,8 +109,10 @@ const HomePage = () => {
                             className='sb-input'
                             placeholder='Search for food...'
                             onChange={(e) => { setSearchValue(e.target.value) }}
+                            onKeyPress={KeyPress}
+                            
                         />
-                        <FaSearch className='sb-icon' onClick={searchFilter} />
+                        <FaSearch className='sb-icon'  />
                     </div>
                     <p className='total-text'>Total : {cost}</p>
                 </div>
