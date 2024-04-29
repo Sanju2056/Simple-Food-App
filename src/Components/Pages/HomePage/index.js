@@ -9,7 +9,7 @@ import { FaSearch } from "react-icons/fa";
 
 const HomePage = () => {
     const { cost, setCost } = useContext(userContext)
-    const [searchValue, setSearchValue] = useState()
+    const [searchValue, setSearchValue] = useState('')
     const [menuList, setMenuList] = useState(data)
     const Category = ['All', 'Breakfast', 'Lunch', 'Dinner']
 
@@ -82,7 +82,9 @@ const HomePage = () => {
         setMenuList(dinnerData)
     }, [active])
 
-    const searchFilter = () => {
+    const searchFilter = (event) => {
+        const value = event.target.value;
+        setSearchValue(value);
         const searchedFilterData = data.filter((searchedData, index) => {
             console.log(searchedData.name)
             console.log(searchValue)
@@ -92,11 +94,11 @@ const HomePage = () => {
         setMenuList(searchedFilterData)
     }
   
-    const KeyPress = (event) => {
-        if (event.key === 'Enter') {
-            searchFilter();
-        }
-    };
+    // const KeyPress = (event) => {
+    //     if (event.key === 'Enter') {
+    //         searchFilter();
+    //     }
+    // };
 
     return (
 
@@ -108,8 +110,9 @@ const HomePage = () => {
                         <input
                             className='sb-input'
                             placeholder='Search for food...'
-                            onChange={(e) => { setSearchValue(e.target.value) }}
-                            onKeyPress={KeyPress}
+                            value={searchValue}
+                            onChange= {searchFilter}
+                            // onKeyPress={KeyPress}
                             
                         />
                         <FaSearch className='sb-icon'  />
